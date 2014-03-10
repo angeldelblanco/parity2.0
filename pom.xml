@@ -9,7 +9,20 @@
 	<properties>
 		<mainClass>es.eucm.ead.engine.demos.Parity2Demo</mainClass>
 	</properties>
-
+	<!-- ====================================================================== -->
+	<!-- R E P O S I T O R I E S -->
+	<!-- ====================================================================== -->
+	<repositories>
+		<!-- SNAPSHOTS from libGDX -->
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>es.e-ucm.ead</groupId>
