@@ -7,7 +7,7 @@
 				touches:[{
 					effects: [{
 						class : goscene,
-						name : scenes/scene5-undersea.json
+						name : scenes/scene3-undersea.json
 					}]
 				}]
 			},
