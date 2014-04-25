@@ -1,1 +1,11 @@
-{notes:{},editScene:scene1-island,width:1920,height:1080,initialScene:scene1-island,sceneorder:[scene1-island,scene2-beach,scene5-undersea]}
+{
+	components:[
+		{
+			class:gamedata,
+			width:1920,
+			height:1080,
+			initialScene:scenes/scene1-island.json,
+			hud: hud/hud.json
+		}
+	]
+}
