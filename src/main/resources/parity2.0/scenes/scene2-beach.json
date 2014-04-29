@@ -336,6 +336,260 @@
 		},
 
         // </TURTLE>
+
+        // GUESS-GROUP 1
+
+        {
+        			x:980,
+        			y:570,
+        			scaleX:0.3575,
+        			scaleY:0.3575,
+        			rotation:140,
+        			components:[
+        			{class:visibility,condition:"(eq $Level-1-Gamestates i1)"},
+        				{
+        					class:tweens,
+        					tweens: [
+        						{
+        							class:rotatetween,
+        							rotation:-105,
+        							relative:true,
+        							duration:0,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-30,
+        							relative:true,
+        							delay:5,
+        							duration:0,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-5,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:scaletween,
+        							scaleY:-0.715,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-130,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-90,
+        							relative:true,
+        							duration:0,
+        							delay:20,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-140,
+        							relative:true,
+        							duration:0,
+        							delay:25,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:scaletween,
+        							scaleY:0.715,
+        							relative:true,
+        							duration:0,
+        							delay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						}
+
+        					]
+        				}
+        			],
+        			children:[
+        				{
+        						scaleX : 0.85,
+        						scaleY : 0.85,
+        						x : -127.97,
+        						y : -121.68,
+        						rotation : 9,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:17,
+        							relative:true,
+        							duration:0.8,
+        							repeatDelay:0.2,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				}, {
+        						scaleX : 0.90,
+        						scaleY : 0.90,
+        						x : -55.25,
+        						y : 146.85,
+        						rotation : 6,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:-7,
+        							relative:true,
+        							duration:1.5,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				},
+        				{
+        						scaleX : 0.95,
+        						scaleY : 0.95,
+        						x : -10.49,
+        						y : 57.34,
+        						rotation : 10,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:10,
+        							relative:true,
+        							duration:1.2,
+        							repeatDelay:0.3,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				},
+        				{
+        						x : 193.71,
+        						y : -82.52,
+        						rotation : 15,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:15,
+        							relative:true,
+        							duration:1.5,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				}
+        			]
+        		},
+
+
+        // </GUESS-GROUP 1>
+
+        // GUESS-GROUP 2
+        {
+				x : 679.99997,
+				y : 459.08255,
+			components : [
+		    {class:visibility,condition:"(eq $Level-1-Gamestates i2)"},
+
+			{
+            				class: tweens,
+            				tweens:[{
+            					class:scaletween,
+                                scaleX:2,
+                                scaleY:2,
+                                relative:true,
+                                duration:0,
+                                delay:0,
+                                yoyo:false,
+                                repeat:0,
+                                repeatDelay:0,
+                                easeEquation:linear,
+                                easeType:inout
+            				}]
+            			},
+
+            			{
+                        				class : image,
+                        				uri : images/scene2-JumpingDolphin.png
+                        			}]
+		},
+
+
+
+        // </GUESS-GROUP 2>
+
+		{
 				x : 1334.3119,
 				y : 367.70642,
 			components : [
