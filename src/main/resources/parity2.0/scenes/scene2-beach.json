@@ -5,7 +5,9 @@
 			{
 				class:touches,
 				touches:[{
-					effects: [{
+				 condition:"(eq $Level-1-Gamestates i3)",
+					effects: [
+					{
 						class : goscene,
 						name : scenes/scene3-undersea.json
 					}]
@@ -58,7 +60,7 @@
 				uri : images/scene2-clouds1.png
 			}]
 		}, {
-				x : 575.77985,
+				x : 475.77985,
 				y : 408.44037,
 			components : [
 			{
@@ -66,7 +68,7 @@
 				uri : images/scene2-DolphinFlipper1.png
 			}]
 		}, {
-				x : 479.99997,
+				x : 379.99997,
 				y : 459.08255,
 			components : [
 			{
@@ -75,14 +77,63 @@
 			}]
 		}, {
 				x : 1234.1283,
-				y : 399.63303,
+				y : 450.63303,
 			components : [
 			{
 				class : image,
 				uri : images/scene2-Kite1.png
+			}, {
+
+			        class: tweens,
+                    tweens:[
+                    {
+                        class:rotatetween,
+                        rotation:15,
+                        relative:true,
+                        duration:2,
+                        yoyo:true,
+                        repeat:-1,
+                        easeEquation:sine,
+                        easeType:inout
+                    },
+                    {
+                    class:movetween,
+                    relative:true,
+                    x:200,
+                    delay:0,
+                    duration:20,
+                    yoyo:true,
+                    repeat:-1,
+                    easeEquation:linear,
+                    easeType:inout
+			    },
+			    {
+                    class:scaletween,
+                    scaleX:-1.3,
+                    relative:true,
+                    delay:5.5,
+                    duration:0,
+                    yoyo:false,
+                    repeat:-1,
+                    repeatDelay:10,
+                    easeEquation:linear,
+                    easeType:inout
+                },
+                {
+                    class:scaletween,
+                    scaleX:1.3,
+                    relative:true,
+                    delay:10.5,
+                    duration:0,
+                    yoyo:false,
+                    repeat:-1,
+                    repeatDelay:10,
+                    easeEquation:linear,
+                    easeType:inout
+                						}]
 			}]
 		}, {
-				x : 1227.523,
+				x : 927.523,
 				y : 411.7431,
 				rotation : 0.042829514,
 			components : [
@@ -91,16 +142,15 @@
 				uri : images/scene2-kite2-shining.png
 			}]
 		}, {
-				x : 843.3026,
-				y : 586.789,
+				x : 1043.3026,
+				y : 1386.789,
 			components : [
 			{
 				class : image,
 				uri : images/scene2-Bee1.png
 			}]
 		}, {
-				x : 997.4312,
-				y : 432.66058,
+				y : 332.66058,
 			components : [
 			{
 				class : image,
@@ -149,7 +199,7 @@
 				scaleY : 1.183486,
 				x : 457.98163,
 				y : 939.0826,
-			components : [
+			components : [{class:visibility,condition:"(eq $Level-1-Gamestates i1)"},
 			{
 				class : image,
 				uri : images/scene2-Seagul1.png
@@ -162,15 +212,70 @@
 				class : image,
 				uri : images/scene2-StoneHeap-Turtle.png
 			}]
-		}, {
+		},
+
+		//EY CRAB-MAN!
+		{
 				x : 1099.8167,
 				y : 129.90825,
 			components : [
+
+	            {class:touches,
+				touches:[ {
+				    condition:"(eq $Level-1-Gamestates i1)",
+					effects: [
+					{
+					class: addcomponent,
+                                					    component:{
+                                                        				class: tweens,
+                                                        				tweens:[{
+                                                        					class:movetween,
+                                                        					relative:true,
+                                                        					y:15,
+                                                        					duration:0.2,
+                                                        					repeat:3
+                                                        				}]
+                                                        			}
+                                					},
+					{
+                              						class : changevar,
+                              						variable : Level-1-Gamestates,
+                              						expression :  "(+ $Level-1-Gamestates i1)"
+                              					}]
+			},
+
+			{
+                                                				    condition:"(not (eq $Level-1-Gamestates i1))",
+                                                					effects: [
+                                                					{ class: addcomponent,
+                                                					    component:{
+                                                                        				class: tweens,
+                                                                        				tweens:[{
+                                                                        					class:rotatetween,
+                                                                                            rotation:45,
+                                                                                            relative:false,
+                                                                                            duration:1,
+                                                                                            repeatDelay:0,
+                                                                                            yoyo:true,
+                                                                                            repeat:3,
+                                                                                            easeEquation:sine,
+                                                                                            easeType:inout
+                                                                        				}]
+                                                                        			}
+                                                					}
+                        			]}]
+
+
+                },
 			{
 				class : image,
 				uri : images/scene2-Crab1.png
 			}]
-		}, {
+		},
+        // END CRABMAN
+
+		// TURTLE
+		{
 				scaleX : 0.86902267,
 				scaleY : 0.8491894,
 				originX : 166.23853,
@@ -180,10 +285,311 @@
 				rotation : 0.37361717,
 			components : [
 			{
+            	            class:touches,
+            				touches:[{
+            				    condition:"(eq $Level-1-Gamestates i2)",
+            					effects: [
+            					{ class: addcomponent,
+            					    component:{
+                                    				class: tweens,
+                                    				tweens:[{
+                                    					class:movetween,
+                                    					relative:true,
+                                    					y:15,
+                                    					duration:0.2,
+                                    					repeat:3
+                                    				}]
+                                    			}
+            					},
+            					{
+                                          		class : changevar,
+                                          						variable : Level-1-Gamestates,
+                                          						expression :  "(+ $Level-1-Gamestates i1)"
+                                          					}]
+            			},
+
+            			{
+                                    				    condition:"(not (eq $Level-1-Gamestates i2))",
+                                    					effects: [
+                                    					{ class: addcomponent,
+                                    					    component:{
+                                                            				class: tweens,
+                                                            				tweens:[{
+                                                            					class:rotatetween,
+                                                                                rotation:45,
+                                                                                relative:false,
+                                                                                duration:1,
+                                                                                repeatDelay:0,
+                                                                                yoyo:true,
+                                                                                repeat:3,
+                                                                                easeEquation:sine,
+                                                                                easeType:inout
+                                                            				}]
+                                                            			}
+                                    					}
+            			]}]
+                            },
+			{
 				class : image,
 				uri : images/scene2-turtle1.png
 			}]
-		}, {
+		},
+
+        // </TURTLE>
+
+        // GUESS-GROUP 1
+
+        {
+        			x:980,
+        			y:570,
+        			scaleX:0.3575,
+        			scaleY:0.3575,
+        			rotation:140,
+        			components:[
+        			{class:visibility,condition:"(eq $Level-1-Gamestates i1)"},
+        				{
+        					class:tweens,
+        					tweens: [
+        						{
+        							class:rotatetween,
+        							rotation:-105,
+        							relative:true,
+        							duration:0,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-30,
+        							relative:true,
+        							delay:5,
+        							duration:0,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-5,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:scaletween,
+        							scaleY:-0.715,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-130,
+        							relative:true,
+        							duration:0,
+        							delay:10,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-90,
+        							relative:true,
+        							duration:0,
+        							delay:20,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:rotatetween,
+        							rotation:-140,
+        							relative:true,
+        							duration:0,
+        							delay:25,
+        							repeatDelay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						},
+        						{
+        							class:scaletween,
+        							scaleY:0.715,
+        							relative:true,
+        							duration:0,
+        							delay:25,
+        							yoyo:false,
+        							repeat:-1,
+        							repeatDelay:25,
+        							easeEquation:linear,
+        							easeType:inout
+        						}
+
+        					]
+        				}
+        			],
+        			children:[
+        				{
+        						scaleX : 0.85,
+        						scaleY : 0.85,
+        						x : -127.97,
+        						y : -121.68,
+        						rotation : 9,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:17,
+        							relative:true,
+        							duration:0.8,
+        							repeatDelay:0.2,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				}, {
+        						scaleX : 0.90,
+        						scaleY : 0.90,
+        						x : -55.25,
+        						y : 146.85,
+        						rotation : 6,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:-7,
+        							relative:true,
+        							duration:1.5,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				},
+        				{
+        						scaleX : 0.95,
+        						scaleY : 0.95,
+        						x : -10.49,
+        						y : 57.34,
+        						rotation : 10,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:10,
+        							relative:true,
+        							duration:1.2,
+        							repeatDelay:0.3,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				},
+        				{
+        						x : 193.71,
+        						y : -82.52,
+        						rotation : 15,
+        						components : [
+        					{
+        						class : image,
+        						uri : images/scene1-island-fish2.png
+        					},
+        					{
+        						class:tweens,
+        						tweens:[{
+        							class:rotatetween,
+        							rotation:15,
+        							relative:true,
+        							duration:1.5,
+        							yoyo:true,
+        							repeat:-1,
+        							easeEquation:linear,
+        							easeType:inout
+        						}]
+        					}]
+        				}
+        			]
+        		},
+
+
+        // </GUESS-GROUP 1>
+
+        // GUESS-GROUP 2
+        {
+				x : 679.99997,
+				y : 459.08255,
+			components : [
+		    {class:visibility,condition:"(eq $Level-1-Gamestates i2)"},
+
+			{
+            				class: tweens,
+            				tweens:[{
+            					class:scaletween,
+                                scaleX:2,
+                                scaleY:2,
+                                relative:true,
+                                duration:0,
+                                delay:0,
+                                yoyo:false,
+                                repeat:0,
+                                repeatDelay:0,
+                                easeEquation:linear,
+                                easeType:inout
+            				}]
+            			},
+
+            			{
+                        				class : image,
+                        				uri : images/scene2-JumpingDolphin.png
+                        			}]
+		},
+
+
+
+        // </GUESS-GROUP 2>
+
+		{
 				x : 1334.3119,
 				y : 367.70642,
 			components : [
