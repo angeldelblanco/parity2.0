@@ -7,6 +7,11 @@
 					effects: [{
 						class : goscene,
 						name : scenes/scene2-beach.json
+					},
+					{
+						class : changevar,
+						variable : Level-1-Gamestates,
+						expression :  "(+ $Level-1-Gamestates i1)"
 					}]
 				}]
 			},
