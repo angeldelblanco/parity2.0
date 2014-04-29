@@ -6,6 +6,17 @@
 			height:1080,
 			initialScene:scenes/scene1-island.json,
 			hud: hud/hud.json
-		}
+
+		},
+		{
+            class:variables,
+            variablesDefinitions:[
+            {
+                class:variabledef,
+                name:Level-1-Gamestates,
+                type:integer,
+                initialValue:"0"
+        }
+        ]}
 	]
 }
