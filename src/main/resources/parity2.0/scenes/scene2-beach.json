@@ -212,15 +212,70 @@
 				class : image,
 				uri : images/scene2-StoneHeap-Turtle.png
 			}]
-		}, {
+		},
+
+		//EY CRAB-MAN!
+		{
 				x : 1099.8167,
 				y : 129.90825,
 			components : [
+
+	            {class:touches,
+				touches:[ {
+				    condition:"(eq $Level-1-Gamestates i1)",
+					effects: [
+					{
+					class: addcomponent,
+                                					    component:{
+                                                        				class: tweens,
+                                                        				tweens:[{
+                                                        					class:movetween,
+                                                        					relative:true,
+                                                        					y:15,
+                                                        					duration:0.2,
+                                                        					repeat:3
+                                                        				}]
+                                                        			}
+                                					},
+					{
+                              						class : changevar,
+                              						variable : Level-1-Gamestates,
+                              						expression :  "(+ $Level-1-Gamestates i1)"
+                              					}]
+			},
+
+			{
+                                                				    condition:"(not (eq $Level-1-Gamestates i1))",
+                                                					effects: [
+                                                					{ class: addcomponent,
+                                                					    component:{
+                                                                        				class: tweens,
+                                                                        				tweens:[{
+                                                                        					class:rotatetween,
+                                                                                            rotation:45,
+                                                                                            relative:false,
+                                                                                            duration:1,
+                                                                                            repeatDelay:0,
+                                                                                            yoyo:true,
+                                                                                            repeat:3,
+                                                                                            easeEquation:sine,
+                                                                                            easeType:inout
+                                                                        				}]
+                                                                        			}
+                                                					}
+                        			]}]
+
+
+                },
 			{
 				class : image,
 				uri : images/scene2-Crab1.png
 			}]
-		}, {
+		},
+        // END CRABMAN
+
+		// TURTLE
+		{
 				scaleX : 0.86902267,
 				scaleY : 0.8491894,
 				originX : 166.23853,
@@ -230,10 +285,57 @@
 				rotation : 0.37361717,
 			components : [
 			{
+            	            class:touches,
+            				touches:[{
+            				    condition:"(eq $Level-1-Gamestates i2)",
+            					effects: [
+            					{ class: addcomponent,
+            					    component:{
+                                    				class: tweens,
+                                    				tweens:[{
+                                    					class:movetween,
+                                    					relative:true,
+                                    					y:15,
+                                    					duration:0.2,
+                                    					repeat:3
+                                    				}]
+                                    			}
+            					},
+            					{
+                                          		class : changevar,
+                                          						variable : Level-1-Gamestates,
+                                          						expression :  "(+ $Level-1-Gamestates i1)"
+                                          					}]
+            			},
+
+            			{
+                                    				    condition:"(not (eq $Level-1-Gamestates i2))",
+                                    					effects: [
+                                    					{ class: addcomponent,
+                                    					    component:{
+                                                            				class: tweens,
+                                                            				tweens:[{
+                                                            					class:rotatetween,
+                                                                                rotation:45,
+                                                                                relative:false,
+                                                                                duration:1,
+                                                                                repeatDelay:0,
+                                                                                yoyo:true,
+                                                                                repeat:3,
+                                                                                easeEquation:sine,
+                                                                                easeType:inout
+                                                            				}]
+                                                            			}
+                                    					}
+            			]}]
+                            },
+			{
 				class : image,
 				uri : images/scene2-turtle1.png
 			}]
-		}, {
+		},
+
+        // </TURTLE>
 				x : 1334.3119,
 				y : 367.70642,
 			components : [
