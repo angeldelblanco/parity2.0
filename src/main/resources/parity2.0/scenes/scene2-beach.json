@@ -5,7 +5,9 @@
 			{
 				class:touches,
 				touches:[{
-					effects: [{
+				 condition:"(eq $Level-1-Gamestates i3)",
+					effects: [
+					{
 						class : goscene,
 						name : scenes/scene3-undersea.json
 					}]
@@ -197,7 +199,7 @@
 				scaleY : 1.183486,
 				x : 457.98163,
 				y : 939.0826,
-			components : [
+			components : [{class:visibility,condition:"(eq $Level-1-Gamestates i1)"},
 			{
 				class : image,
 				uri : images/scene2-Seagul1.png
